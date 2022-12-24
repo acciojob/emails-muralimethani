@@ -31,7 +31,8 @@ public class Gmail extends Email {
             Mail mail = new Mail(date, sender, message);
             inbox.add(mail);
 
-        } else {
+        }
+        else {
             trash.add(inbox.get(0));
             inbox.remove(0);
             inbox.add(new Mail(date, sender, message));
@@ -46,8 +47,8 @@ public class Gmail extends Email {
         for (int i=0; i<inbox.size(); i++){
             if (inbox.get(i).getMessage().equals(message)){
                 trash.add(inbox.get(i));
-                inbox.remove(i);
-                break;
+                inbox.remove(inbox.get(i));
+                return;
             }
         }
 
